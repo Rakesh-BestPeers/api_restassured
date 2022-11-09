@@ -143,7 +143,7 @@ public class RequestFactory extends TestBase {
 
 	// UPLOAD_PROFILE_IMAGE
 	public Response uploadProfileImage_PUT(String url, ExtentTest test) throws JsonProcessingException {
-		image_profileImage root = new image_profileImage(profile_image);
+		image_profileImage root = new image_profileImage("profile_image");
 
 		extentTest.get().log(Status.INFO,
 				MarkupHelper.createLabel("API Url is :: " + RestAssured.baseURI + url, ExtentColor.PINK));
