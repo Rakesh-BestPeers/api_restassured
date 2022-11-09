@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="APIs_Suite">
+	<listeners>
+		<listener class-name="com.listener.TestListener" />
+	</listeners>
+	<test thread-count="5" name="GrizzlyPAW_APIs">
+		<classes>
+			<class name="com.testSuite.version_GET_IOS" />
+			<class name="com.testSuite.version_GET_ANDROID" />
+			<class name="com.testSuite.notify_GET_notifications" />
+			<class name="com.testSuite.group_POST_groupGames" />
+		</classes>
+	</test>
+</suite>
