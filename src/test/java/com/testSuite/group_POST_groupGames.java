@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.listener.Retry;
 import com.requests.RequestFactory;
 import com.tests.TestBase;
 import com.utils.RestUtils;
@@ -22,11 +23,11 @@ public class group_POST_groupGames extends TestBase {
 	ExtentTest log;
 	boolean flag = false;
 
-	@Test(priority = 0)
+	@Test(retryAnalyzer = Retry.class, priority = 0)
 	@Owner("Automation Engineer : Rakesh Singh Thakur")
 	@Severity(SeverityLevel.NORMAL)
 	@Description("Admin Check API : group_POST_groupGames")
-	
+
 	public void gamecardProps() throws JsonProcessingException {
 		if (test == null) {
 			test = extent.createTest("Grizzly Admin Should be able to post all groups id games List");
@@ -40,7 +41,6 @@ public class group_POST_groupGames extends TestBase {
 
 		log = extentTest.get().createNode("To Verify Status Code :: all groups id games List");
 		RestUtils.getStatusCode(response, log);
-
 
 	}
 

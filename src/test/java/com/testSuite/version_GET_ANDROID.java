@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.listener.Retry;
 import com.requests.RequestFactory;
 import com.tests.TestBase;
 import com.utils.RestUtils;
@@ -22,7 +23,7 @@ public class version_GET_ANDROID extends TestBase {
 	ExtentTest log;
 	boolean flag = false;
 
-	@Test(priority = 0)
+	@Test(retryAnalyzer = Retry.class, priority = 0)
 	@Owner("Automation Engineer : Rakesh Singh Thakur")
 	@Severity(SeverityLevel.NORMAL)
 	@Description("Admin Check API : version_GET_ANDROID")
